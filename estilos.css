@@ -1,12 +1,22 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
 }
 
 .container {
     display: grid;
-    grid-template-columns: 25% 200px 25%;
+    height: 100vh;
+    /* grid-template-columns: 25% 200px 25%;
     grid-template-rows: 300px 300px;
-    grid-template: 300px 100px 100px / 33% 33% 33%;
+    grid-template: 300px 100px 100px / 1fr 1fr 1fr;
+    grid-template: 300px 100px 100px / repeat(4,1fr); */
+    grid-template: 100px 1fr 150px / 200px 1fr;
+    /* grid-column-gap: 30px;
+    grid-row-gap: 50px; */
+    grid-gap: 10px;
+    grid-template-areas: "header header" 
+                         "menu contenido" 
+                         "footer footer";
 } 
 
 .item {
@@ -19,4 +29,20 @@ body {
     background-color: pink;
     overflow: auto;
     display: subgrid;
+}
+
+.header {
+    grid-area: header;
+}
+
+.menu {
+    grid-area: menu;
+}
+
+.contenido {
+    grid-area: contenido;
+}
+
+.footer {
+    grid-area: footer;
 }

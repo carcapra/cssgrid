@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nOMBRE lINEAS</title>
+    <style>
+       body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: [inicio] 1fr [linea1] 1fr [linea2] 1fr [destacado-end] 1fr [destacado2] 1fr [linea6] 1fr [destacado2-end] 1fr [Final];
+    grid-template-rows: [inicio] 200px [inicio2] 200px [final];
+    /* grid-template-columns: 25% 200px 25%;
+    grid-template-rows: 300px 300px;
+    grid-template: 300px 100px 100px / 1fr 1fr 1fr;
+    grid-template: 300px 100px 100px / repeat(4,1fr); */
+    /* grid-template: 100px 1fr 150px / 200px 1fr; */
+    /* grid-column-gap: 30px;
+    grid-row-gap: 50px; */
+    grid-gap: 5px;
+    grid-template-areas: "header header" 
+                         "menu contenido" 
+                         "footer footer";
+} 
+
+.item {
+    background-color: blue;
+    padding: 10px;
+    border: 1px solid red;
+}
+
+.item:nth-of-type(1) {
+    grid-column: inicio / destacado-end;
+    grid-row: inicio / final;
+}
+.item:nth-of-type(2) {
+    grid-column: destacado-end / linea6;
+    grid-row: inicio / final;
+}
+.item:nth-of-type(3) {
+    grid-column: linea6 / final;
+}
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item">item #1</div>
+        <div class="item">item #2</div>
+        <div class="item">item #3</div>
+        <div class="item">item #4</div>
+        <div class="item">item #5</div>
+    </section>   
+</body>
+</html>
